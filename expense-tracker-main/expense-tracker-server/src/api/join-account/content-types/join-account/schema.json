@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "join_accounts",
+  "info": {
+    "singularName": "join-account",
+    "pluralName": "join-accounts",
+    "displayName": "JoinAccount",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "users_permissions_users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "join_accounts"
+    },
+    "join_account_entries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::join-account-entry.join-account-entry",
+      "mappedBy": "join_account"
+    }
+  }
+}

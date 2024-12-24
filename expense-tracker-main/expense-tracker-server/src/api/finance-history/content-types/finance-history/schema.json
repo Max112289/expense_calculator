@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "finance_histories",
+  "info": {
+    "singularName": "finance-history",
+    "pluralName": "finance-histories",
+    "displayName": "FinanceHistory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "type": {
+      "type": "string"
+    },
+    "finance": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::finance.finance",
+      "inversedBy": "finance_histories"
+    }
+  }
+}

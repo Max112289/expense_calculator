@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "finances",
+  "info": {
+    "singularName": "finance",
+    "pluralName": "finances",
+    "displayName": "Finance",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "finances"
+    },
+    "finance_histories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::finance-history.finance-history",
+      "mappedBy": "finance"
+    }
+  }
+}

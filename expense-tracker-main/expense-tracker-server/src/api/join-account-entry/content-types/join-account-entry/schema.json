@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "join_account_entries",
+  "info": {
+    "singularName": "join-account-entry",
+    "pluralName": "join-account-entries",
+    "displayName": "JoinAccountEntry"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "amount": {
+      "type": "decimal"
+    },
+    "comment": {
+      "type": "string"
+    },
+    "join_account": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::join-account.join-account",
+      "inversedBy": "join_account_entries"
+    }
+  }
+}
